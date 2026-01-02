@@ -7,16 +7,27 @@ services:
     environment:
       - NAME=cam1
       - RTSP_URL=${RTSP_URL}
-    env_file:
-      - .env
+      - OUT=${OUT}
+      - TZ=${TZ}
+      - FORMAT=${FORMAT}
+      - DURATION=${DURATION}
+      - SEGMENT_FORMAT=${SEGMENT_FORMAT}
+      - TIMEOUT_BUFFER=${TIMEOUT_BUFFER}
+      - LOG_LEVEL=${LOG_LEVEL}
     volumes:
       - ${OUT}:/out/
     restart: always
 
   merge:
     build: ./merger
-    env_file:
-      - .env
+    environment:
+      - OUT=${OUT}
+      - TZ=${TZ}
+      - CLEANUP_SPACE=${CLEANUP_SPACE}
+      - CLEANUP_REGEX=${CLEANUP_REGEX}
+      - CLEANUP_DIR=${CLEANUP_DIR}
+      - EMAIL=${EMAIL}
+      - ACCESS_TOKEN=${ACCESS_TOKEN}
     volumes:
       - ${OUT}:/out/
     restart: always

@@ -20,10 +20,17 @@ This is a Docker and Docker Compose based solution for recording 5 RTSP streams 
 
 ## Getting Started
 
+### Quick Start (Portainer)
+See [DEPLOYMENT.md](DEPLOYMENT.md) for complete deployment instructions.
+
+### Manual Setup
 1. Make sure you have [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) installed.
-2. Update the RTSP stream URLs in the `docker-compose.yml` configuration file.
+2. Set environment variables (see [DEPLOYMENT.md](DEPLOYMENT.md) for required variables).
 3. Run `docker-compose up -d` to start the recording and merging containers.
-4. The recorded videos will be saved in the `output` directory.
+4. The recorded videos will be saved in the configured output directory.
+
+### Portainer Deployment
+📖 **Read [DEPLOYMENT.md](DEPLOYMENT.md)** for step-by-step Portainer setup with environment variables.
 
 ## Images
 
