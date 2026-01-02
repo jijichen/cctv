@@ -25,6 +25,6 @@ ffmpeg -loglevel error -i $IN_VID -an -filter:v "setpts=PTS/60" $OUT_VID
 echo "timelapse video created at $OUT_VID"
 
 TIMELAPSE_PATH_FOR_UPLOADER="/external/${CAMID}/${DATE}_${CAMID}_timelapse.mkv"
-echo "submit a task to upload the file to youtube $TIMELAPSE_PATH_FOR_UPLOADER"
-/app/upload.sh "$CAMID" "$DATE" "$TIMELAPSE_PATH_FOR_UPLOADER";
-echo "task submitt call ended"
+echo "YouTube upload disabled - timelapse file available at $TIMELAPSE_PATH_FOR_UPLOADER"
+# /app/upload.sh "$CAMID" "$DATE" "$TIMELAPSE_PATH_FOR_UPLOADER";
+# echo "task submitt call ended"
