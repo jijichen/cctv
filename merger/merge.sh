@@ -1,5 +1,5 @@
 #!/bin/bash
-export TZ=Asia/Kolkata
+export TZ=America/Los_Angeles
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
 MDAYS=$1
 DIR=$2

@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 ARG DEBIAN_FRONTEND=noninteractive
-ENV TZ=Asia/Kolkata
+ENV TZ=America/Los_Angeles
 RUN apt-get update \
     && apt-get install -yq software-properties-common tzdata
 RUN add-apt-repository ppa:jonathonf/ffmpeg-4

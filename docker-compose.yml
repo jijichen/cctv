@@ -6,57 +6,9 @@ services:
     network_mode: host
     environment:
       - NAME=cam1
-      - RTSP_URL=rtsp://10.0.0.254:8554/ald-1
+      - RTSP_URL=rtsp://192.168.4.56:554/stream0
     env_file:
       - .env
-    volumes:
-      - ${OUT}:/out/
-    restart: always
-
-  cam2:
-    build: ./recorder
-    environment:
-      - NAME=cam2
-      - RTSP_URL=rtsp://10.0.0.254:8554/ah-car
-    env_file:
-      - .env
-    network_mode: host
-    volumes:
-      - ${OUT}:/out/
-    restart: always
-
-  cam3:
-    build: ./recorder
-    environment:
-      - NAME=cam3
-      - RTSP_URL=rtsp://10.0.0.254:8554/ah-inside
-    env_file:
-      - .env
-    network_mode: host
-    volumes:
-      - ${OUT}:/out/
-    restart: always
-
-  cam4:
-    build: ./recorder
-    environment:
-      - NAME=cam4
-      - RTSP_URL=rtsp://10.0.0.254:8554/ah-outside
-    env_file:
-      - .env
-    network_mode: host
-    volumes:
-      - ${OUT}:/out/
-    restart: always
-
-  cam5:
-    build: ./recorder
-    environment:
-      - NAME=cam5
-      - RTSP_URL=rtsp://10.0.0.254:8554/ah-godrej
-    env_file:
-      - .env
-    network_mode: host
     volumes:
       - ${OUT}:/out/
     restart: always
