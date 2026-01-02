@@ -6,7 +6,7 @@ services:
     network_mode: host
     environment:
       - NAME=cam1
-      - RTSP_URL=rtsp://192.168.4.56:554/stream0  # Add auth: rtsp://user:pass@ip:port/path
+      - RTSP_URL=${RTSP_URL}
     env_file:
       - .env
     volumes:
