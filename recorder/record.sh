@@ -1,17 +1,20 @@
 #!/bin/sh
-#export TZ=Asia/Kolkata
-#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
+export TZ=$TZ
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
 echo $(date)
-#NAME=$1
-#DURATION=$2
-#RTSP_URL=$3
-#FORMAT=$4
-#SEGMENT_FORMAT=$5
-#TIMEOUT_BUFFER=$6
+# Use environment variables instead of parameters
 if [ ! -e /out/$NAME ]; then
   mkdir /out/$NAME
 fi
 chmod 775 /out/$NAME
+
+# Set defaults if variables are not set
+DURATION=${DURATION:-600}
+TIMEOUT_BUFFER=${TIMEOUT_BUFFER:-30}
+FORMAT=${FORMAT:-mkv}
+SEGMENT_FORMAT=${SEGMENT_FORMAT:-%d-%m-%Y_%H%M%S}
+LOG_LEVEL=${LOG_LEVEL:-error}
+
 TIMEOUT=$(( $DURATION + $TIMEOUT_BUFFER ))
 
 while true
