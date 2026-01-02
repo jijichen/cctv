@@ -25,6 +25,10 @@ For deployment in Portainer (or any environment), set these variables:
 - **CLEANUP_REGEX** - File pattern for cleanup (default: `.*-[0-9]+_\(cam[0-9]\|mosaic\).*`)
 - **CLEANUP_DIR** - Directory to cleanup (default: `/out/`)
 
+### Debugging (Optional)
+- **TIMEOUT_BUFFER** - Recording timeout buffer in seconds (default: `30`)
+- **LOG_LEVEL** - FFmpeg log level (default: `error`)
+
 ### YouTube Upload (Disabled)
 - **EMAIL** - Email for uploads (set to `disabled`)
 - **ACCESS_TOKEN** - Upload token (set to `disabled`)
